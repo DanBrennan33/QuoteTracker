@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars Quotes</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <h1>May the Node be with you</h1>
+
+  <div class="quote-input">
+    <form action="/quotes" method="POST">
+      <input class="input-text" type="text" placeholder="character name" name="name">
+      <input class="input-text"type="text" placeholder="quote" name="quote">
+      <br />
+      <button class="submit-btn" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+        <span><%= quotes[i].name %></span>
+        -
+        "<span><%= quotes[i].quote %></span>"
+    </li>
+  <% } %>
+  </ul>
+
+</body>
+</html>
